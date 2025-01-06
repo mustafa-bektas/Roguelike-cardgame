@@ -31,7 +31,7 @@ public class SynergyCalculator : MonoBehaviour
                 bool isAttackCard = (currentData.suit == Suit.Hearts || currentData.suit == Suit.Diamonds);
                 bool isShieldCard = (currentData.suit == Suit.Spades || currentData.suit == Suit.Clubs);
 
-                Debug.Log($"Evaluating {currentData.suit} {currentData.rank} at Row {row}, Col {col}");
+                Debug.LogWarning($"Evaluating {currentData.CardName} at Row {row}, Col {col}");
 
                 // Evaluate based on row and card type
                 if (row == 0) // Front row (Attack row)
@@ -39,12 +39,12 @@ public class SynergyCalculator : MonoBehaviour
                     if (isAttackCard)
                     {
                         totalDamage += rank; // Full damage for attack cards
-                        Debug.Log($"{currentData.suit} {currentData.rank} deals {rank} damage!");
+                        Debug.Log($"{currentData.CardName} deals {rank} damage!");
                     }
                     else if (isShieldCard)
                     {
                         totalShield += rank / 2; // Half shield for shield cards
-                        Debug.Log($"{currentData.suit} {currentData.rank} applies {rank / 2} shield!");
+                        Debug.Log($"{currentData.CardName} applies {rank / 2} shield!");
                     }
                 }
                 else if (row == 1) // Back row (Defense row)
@@ -52,19 +52,19 @@ public class SynergyCalculator : MonoBehaviour
                     if (isShieldCard)
                     {
                         totalShield += rank; // Full shield for shield cards
-                        Debug.Log($"{currentData.suit} {currentData.rank} applies {rank} shield!");
+                        Debug.Log($"{currentData.CardName} applies {rank} shield!");
                     }
                     else if (isAttackCard)
                     {
                         totalDamage += rank / 2; // Half damage for attack cards
-                        Debug.Log($"{currentData.suit} {currentData.rank} deals {rank / 2} damage!");
+                        Debug.Log($"{currentData.CardName} deals {rank / 2} damage!");
                     }
                 }
             }
         }
 
         // Log final results
-        Debug.Log($"Total Damage: {totalDamage}, Total Shield: {totalShield}");
+        Debug.LogWarning($"Total Damage: {totalDamage}, Total Shield: {totalShield}");
 
         // Return the calculated synergy
         return new SynergyResult

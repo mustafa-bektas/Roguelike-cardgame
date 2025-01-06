@@ -25,7 +25,6 @@ public class GridSlot : MonoBehaviour
             bool success = gridManager.PlaceCardInSlot(row, col);
             if (success)
             {
-                Debug.Log($"Card placed at ({row}, {col}).");
             }
         }
         else

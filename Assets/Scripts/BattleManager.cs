@@ -17,7 +17,7 @@ public class BattleManager : MonoBehaviour
     public int playerHP = 30;
     public int playerShield = 0;
     public int enemyHP = 40;
-    public int enemyFlatDamage = 5;
+    public int enemyFlatDamage = 15;
 
     // Maybe you want to draw 3-5 cards at the start of each turn
     [SerializeField] private int cardsDrawnPerTurn = 3;
@@ -73,7 +73,7 @@ public class BattleManager : MonoBehaviour
 
         // 4. Enemy deals flat damage
         int damageToPlayer = enemyFlatDamage;
-        Debug.Log("Enemy deals " + damageToPlayer + " damage to player");
+        Debug.LogWarning("Enemy deals " + damageToPlayer + " damage to player");
         if (playerShield >= damageToPlayer)
         {
             // Shield absorbs it fully

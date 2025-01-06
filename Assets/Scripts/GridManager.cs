@@ -55,7 +55,7 @@ public class GridManager : MonoBehaviour
     // Place card in the grid
     public bool PlaceCardInSlot(int row, int col)
     {
-        Debug.Log($"Placing card at row {row}, col {col}");
+        Debug.Log($"Placing {selectedCard.cardData.CardName} in row {row}, col {col}");
 
         // Error handling: Make sure a card is selected
         if (selectedCard == null)

@@ -43,5 +43,5 @@ public class CardData
     // public GameObject cardPrefab;
     
     // A helper property to combine suit & rank into a readable name
-    public string CardName => suit + "_" + rank; // e.g. "Clubs_Two"
+    public string CardName => rank + " of " + suit;
 }
