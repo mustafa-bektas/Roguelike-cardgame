@@ -34,11 +34,12 @@ public class BattleManager : MonoBehaviour
 
     public void StartTurn()
     {
+        gridManager.RemoveTwoRandomCards();
         currentTurn++;
         // 1. Draw some cards
         for (int i = 0; i < cardsDrawnPerTurn; i++)
         {
-            CardData drawnCard = cardVisualManager.DrawAndShowCard(currentTurn);
+            CardData drawnCard = cardVisualManager.DrawAndShowCard();
         }
         // Player places cards, etc...
         // This continues until player hits "End Turn"
@@ -68,7 +69,6 @@ public class BattleManager : MonoBehaviour
             // Possibly load next floor or show "Victory" screen
         }
         
-        playerHP += synergy.healing;
         playerShield += synergy.shield;
 
         // 4. Enemy deals flat damage
@@ -112,7 +112,7 @@ public class BattleManager : MonoBehaviour
             
             // Then start the next turn
             UpdateHPUI();
-            gridManager.RemoveThreeRandomCards();
+            gridManager.MarkAllCardsOnTheGridAsNotDrawnOnTurn();
             StartTurn();
         }
     }
