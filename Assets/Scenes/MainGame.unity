@@ -643,8 +643,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 859864926}
   m_HandleRect: {fileID: 859864925}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.99999994
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1315,7 +1315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -169.46002, y: 106}
+  m_AnchoredPosition: {x: -169.45996, y: 106}
   m_SizeDelta: {x: 74.95996, y: 30.109985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &394656371
@@ -3440,7 +3440,7 @@ MonoBehaviour:
   playerShield: 0
   enemyHP: 100
   enemyFlatDamage: 15
-  cardsDrawnPerTurn: 3
+  cardsDrawnPerTurn: 5
 --- !u!4 &1189785189
 Transform:
   m_ObjectHideFlags: 0
@@ -3749,7 +3749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000091552734, y: -562.025}
+  m_AnchoredPosition: {x: 0.000091552734, y: -562.02527}
   m_SizeDelta: {x: 738.96, y: 1906.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1328135851
@@ -4437,7 +4437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -169.46002, y: 216}
+  m_AnchoredPosition: {x: -169.45996, y: 216}
   m_SizeDelta: {x: 74.95996, y: 30.109985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1634920064
@@ -4917,7 +4917,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 393319421}
   m_HandleRect: {fileID: 393319420}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5043,8 +5043,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1031757476}
   m_HandleRect: {fileID: 1031757475}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.394903
+  m_Value: 1.0000002
+  m_Size: 0.41025066
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

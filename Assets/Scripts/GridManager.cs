@@ -10,6 +10,8 @@ public class GridManager : MonoBehaviour
     private CardDisplay[,] gridSlots; // 2D array for cards in grid
     private CardDisplay selectedCard; // The card currently selected for placement
     [SerializeField] private Transform handPanel;
+    [SerializeField] private int maxCardsPlayablePerTurn = 3;
+    private int numCardsPlayedThisTurn = 0;
 
     private void Awake()
     {
@@ -63,6 +65,13 @@ public class GridManager : MonoBehaviour
             Debug.LogWarning("No card selected!");
             return false;
         }
+        
+        // Error handling: Check if the player has reached the maximum number of cards to play
+        if (numCardsPlayedThisTurn >= maxCardsPlayablePerTurn)
+        {
+            Debug.LogWarning("Maximum number of cards played this turn!");
+            return false;
+        }
 
         // Error handling: Check if the slot is already occupied
         if (gridSlots[row, col] != null)
@@ -92,6 +101,7 @@ public class GridManager : MonoBehaviour
         selectedCard.UpdateGridPosition(row, col);
         selectedCard.transform.SetParent(transform, false); // Move card to grid parent
         selectedCard.transform.localPosition = GetSlotPosition(row, col);
+        numCardsPlayedThisTurn++;
 
         // Deselect the card after placement
         ClearSelectedCard();
@@ -183,8 +193,14 @@ public class GridManager : MonoBehaviour
         card.DeselectCard(); // Reset its visuals
         card.row = -1;
         card.col = -1; // Clear position
+        numCardsPlayedThisTurn--;
 
         Debug.Log($"Card {card.cardData.CardName} returned to hand.");
+    }
+    
+    public void ResetNumCardsPlayedThisTurn()
+    {
+        numCardsPlayedThisTurn = 0;
     }
 
     // **Remove a card from the grid**

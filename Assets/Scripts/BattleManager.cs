@@ -23,6 +23,7 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private int cardsDrawnPerTurn = 3;
     
     public static int currentTurn = 0;
+    private bool isGameOver = false;
 
     private void Start()
     {
@@ -34,8 +35,14 @@ public class BattleManager : MonoBehaviour
 
     public void StartTurn()
     {
+        if (isGameOver)
+        {
+            Debug.LogWarning("Game is already over!");
+            return;
+        }
         gridManager.RemoveTwoRandomCards();
         currentTurn++;
+        gridManager.ResetNumCardsPlayedThisTurn();
         // 1. Draw some cards
         for (int i = 0; i < cardsDrawnPerTurn; i++)
         {
@@ -48,6 +55,12 @@ public class BattleManager : MonoBehaviour
     // This is called by an "End Turn" button
     public void EndTurn()
     {
+        if (isGameOver)
+        {
+            Debug.LogWarning("Game is already over!");
+            return;
+        }
+        
         // 1. Calculate synergy from the synergy grid
         SynergyCalculator.SynergyResult synergy = synergyCalculator.CalculateSynergy();
 
@@ -94,12 +107,14 @@ public class BattleManager : MonoBehaviour
         {
             UpdateHPUI();
             Debug.Log("You won! Enemy HP is 0.");
+            isGameOver = true;
             // Possibly load next floor or show "Victory" screen
         }
         else if (playerHP <= 0)
         {
             UpdateHPUI();
             Debug.Log("You lost! Player HP is 0.");
+            isGameOver = true;
             // Show "Game Over" screen or something
         }
         else
