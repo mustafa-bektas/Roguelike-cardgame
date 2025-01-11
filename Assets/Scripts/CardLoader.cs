@@ -118,9 +118,6 @@ public class CardLoader : MonoBehaviour
             case "8":  return Rank.Eight;
             case "9":  return Rank.Nine;
             case "10": return Rank.Ten;
-            case "j":  return Rank.Jack;
-            case "q":  return Rank.Queen;
-            case "k":  return Rank.King;
             case "a":  return Rank.Ace;
             default:
                 Debug.LogWarning("Unknown rank string: " + rankString);
