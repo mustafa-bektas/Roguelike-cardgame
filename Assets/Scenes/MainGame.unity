@@ -643,8 +643,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 859864926}
   m_HandleRect: {fileID: 859864925}
   m_Direction: 0
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -843,6 +843,142 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &165322546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 165322547}
+  - component: {fileID: 165322549}
+  - component: {fileID: 165322548}
+  m_Layer: 5
+  m_Name: DiscardWarning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &165322547
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165322546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 238970356}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -205.82}
+  m_SizeDelta: {x: 267.53, y: 40.35}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &165322548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165322546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Discard a card
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &165322549
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165322546}
+  m_CullTransparentMesh: 1
 --- !u!1 &182589586
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1257,7 @@ RectTransform:
   - {fileID: 38528996}
   - {fileID: 88035010}
   - {fileID: 423485823}
+  - {fileID: 165322547}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2621,6 +2758,8 @@ MonoBehaviour:
   numRows: 2
   numColumns: 3
   handPanel: {fileID: 1548968213}
+  maxCardsPlayablePerTurn: 3
+  discardMode: 0
 --- !u!4 &829010411
 Transform:
   m_ObjectHideFlags: 0
@@ -3436,6 +3575,7 @@ MonoBehaviour:
   gridManager: {fileID: 829010410}
   playerHpText: {fileID: 74324407}
   enemyHpText: {fileID: 1986571914}
+  discardCardText: {fileID: 165322546}
   playerHP: 30
   playerShield: 0
   enemyHP: 100
@@ -3749,7 +3889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000091552734, y: -562.02527}
+  m_AnchoredPosition: {x: 0.000091552734, y: -562.0251}
   m_SizeDelta: {x: 738.96, y: 1906.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1328135851
@@ -3783,19 +3923,19 @@ MonoBehaviour:
     1: Defense Row (Back Row)</b></color>  \r\n\u2022 <b><color=#4C9EFF>Shield Cards:</color></b>
     Apply <b><color=#4C9EFF>full rank as shield</color></b>.  \r\n\u2022 <b><color=#FF4C4C>Attack
     Cards:</color></b> Deal <b><color=#FF4C4C>half rank as damage</color></b>.  \r\n\r\n<line-height=120%><size=48><b>Turn
-    Rules</b></size></line-height>\r\n<b>Draw Phase:</b> Draw <b>3 cards</b> at the
+    Rules</b></size></line-height>\r\n<b>Draw Phase:</b> Draw <b>5 cards</b> at the
     start of each turn.  \r\n<b>Placement Phase:</b> Select a card, then click an
-    empty slot to place it.  \r\n\r\n<color=#32CD32>Right-Click Actions:</color> 
-    \r\n\u2022 <b>Cards drawn this turn:</b> Return to <b>hand</b>.  \r\n\u2022 <b>Older
-    cards:</b> <b>Remove</b> and destroy.\r\n\r\n<line-height=120%><size=48><b>Synergy
-    Calculations</b></size></line-height>\r\n<b>Attack and Shield values</b> depend
-    on <b>card rank</b> and <b>placement row</b>.  \r\n<b>Maximize effects</b> by
-    using the correct rows.\r\n\r\n<line-height=120%><size=48><b>Enemy Attacks</b></size></line-height>\r\n\u2022
-    Enemy deals <b>15 flat damage</b> each turn.  \r\n\u2022 <b>Shield absorbs damage</b>,
-    remaining hits affect <b>health</b>.  \r\n\r\n<line-height=120%><size=48><b>Winning
-    and Losing</b></size></line-height>\r\n\u2022 <b>Win:</b> Reduce the <b>enemy's
-    health to 0</b>.  \r\n\u2022 <b>Lose:</b> If your <b>health drops to 0</b>. 
-    \r\n"
+    empty slot to place it.  \n<b>End Turn:</b> Discard 1 card from hand by clicking
+    on a card.\r\n\r\n<color=#32CD32>Right-Click Actions:</color>  \r\n\u2022 <b>Cards
+    drawn this turn:</b> Return to <b>hand</b>.  \r\n\u2022 <b>Older cards:</b> <b>Remove</b>
+    and destroy.\r\n\r\n<line-height=120%><size=48><b>Synergy Calculations</b></size></line-height>\r\n<b>Attack
+    and Shield values</b> depend on <b>card rank</b> and <b>placement row</b>.  \r\n<b>Maximize
+    effects</b> by using the correct rows.\r\n\r\n<line-height=120%><size=48><b>Enemy
+    Attacks</b></size></line-height>\r\n\u2022 Enemy deals <b>15 flat damage</b>
+    each turn.  \r\n\u2022 <b>Shield absorbs damage</b>, remaining hits affect <b>health</b>. 
+    \r\n\r\n<line-height=120%><size=48><b>Winning and Losing</b></size></line-height>\r\n\u2022
+    <b>Win:</b> Reduce the <b>enemy's health to 0</b>.  \r\n\u2022 <b>Lose:</b> If
+    your <b>health drops to 0</b>.  \r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3907,6 +4047,7 @@ MonoBehaviour:
   cardDisplayPrefab: {fileID: 493785024458169277, guid: b0970df5d7f0a5b4b8c368991d265e86, type: 3}
   handPanel: {fileID: 1548968213}
   gridManager: {fileID: 829010410}
+  battleManager: {fileID: 1189785188}
 --- !u!4 &1332354149
 Transform:
   m_ObjectHideFlags: 0
@@ -4917,7 +5058,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 393319421}
   m_HandleRect: {fileID: 393319420}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5043,8 +5184,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1031757476}
   m_HandleRect: {fileID: 1031757475}
   m_Direction: 2
-  m_Value: 1.0000002
-  m_Size: 0.41025066
+  m_Value: 1.0000001
+  m_Size: 0.41046324
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

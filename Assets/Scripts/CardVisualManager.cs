@@ -7,6 +7,7 @@ public class CardVisualManager : MonoBehaviour
     [SerializeField] private GameObject cardDisplayPrefab;
     [SerializeField] private Transform handPanel;
     [SerializeField] private GridManager gridManager;
+    [SerializeField] private BattleManager battleManager;
 
     public CardData DrawAndShowCard()
     {
@@ -17,7 +18,7 @@ public class CardVisualManager : MonoBehaviour
             GameObject newCardObj = Instantiate(cardDisplayPrefab, handPanel);
 
             CardDisplay display = newCardObj.GetComponent<CardDisplay>();
-            display.Initialize(drawnCard, gridManager, true); // Mark as drawn this turn
+            display.Initialize(drawnCard, gridManager, true, battleManager); // Mark as drawn this turn
 
             Button button = newCardObj.GetComponent<Button>();
             button.onClick.AddListener(display.OnCardClick);

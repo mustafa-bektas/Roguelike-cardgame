@@ -13,6 +13,8 @@ public class GridManager : MonoBehaviour
     [SerializeField] private int maxCardsPlayablePerTurn = 3;
     private int numCardsPlayedThisTurn = 0;
 
+    public bool discardMode = false;
+    
     private void Awake()
     {
         gridSlots = new CardDisplay[numRows, numColumns];

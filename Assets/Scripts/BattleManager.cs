@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class BattleManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private TMPro.TextMeshProUGUI playerHpText;
     [SerializeField] private TMPro.TextMeshProUGUI enemyHpText;
+    [SerializeField] public GameObject discardCardText;
 
     [Header("Game Variables")]
     public int playerHP = 30;
@@ -24,9 +26,12 @@ public class BattleManager : MonoBehaviour
     
     public static int currentTurn = 0;
     private bool isGameOver = false;
+    
+    public UnityAction onCardDiscarded;
 
     private void Start()
     {
+        onCardDiscarded += StartTurn;
         // Initialize HP UI
         UpdateHPUI();
         // Possibly do an initial "Start Turn" automatically
@@ -43,6 +48,7 @@ public class BattleManager : MonoBehaviour
         gridManager.RemoveTwoRandomCards();
         currentTurn++;
         gridManager.ResetNumCardsPlayedThisTurn();
+        
         // 1. Draw some cards
         for (int i = 0; i < cardsDrawnPerTurn; i++)
         {
@@ -128,7 +134,7 @@ public class BattleManager : MonoBehaviour
             // Then start the next turn
             UpdateHPUI();
             gridManager.MarkAllCardsOnTheGridAsNotDrawnOnTurn();
-            StartTurn();
+            HandleDiscard();
         }
     }
 
@@ -136,6 +142,14 @@ public class BattleManager : MonoBehaviour
     {
         playerHpText.text = "Player HP: " + playerHP + "\nShield: " + playerShield;
         enemyHpText.text = "Enemy HP: " + enemyHP;
+    }
+
+    private void HandleDiscard()
+    {
+        discardCardText.SetActive(true);
+        gridManager.discardMode = true;
+        
+        Debug.Log("Discard mode enabled");
     }
     
     public void RestartGame()

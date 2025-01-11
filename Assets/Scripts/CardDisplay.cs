@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class CardDisplay : MonoBehaviour
@@ -15,18 +16,21 @@ public class CardDisplay : MonoBehaviour
 
     private bool isSelected = false;                       // Track if card is selected
     private GridManager gridManager;                       // Reference to the GridManager
+    private BattleManager battleManager;                   // Reference to the BattleManager
 
     // Hover/Select Scaling Variables
     private Vector3 originalScale;                         // Original scale
     private Vector3 hoverScale;                            // Hover effect scale
     private Vector3 selectScale;                           // Selected effect scale
-
+    
     // **Initialization**
-    public void Initialize(CardData data, GridManager gridManagerRef, bool drawnThisTurn)
+    public void Initialize(CardData data, GridManager gridManagerRef, bool drawnThisTurn, BattleManager battleManagerRef)
     {
         cardData = data;
         gridManager = gridManagerRef;
         drawnOnTurn = drawnThisTurn;
+        battleManager = battleManagerRef;
+        
         UpdateVisuals();
 
         // Cache original scale and calculate hover effects
@@ -119,6 +123,26 @@ public class CardDisplay : MonoBehaviour
                 HandleCardRemovalFromGrid(); // Process removal
             }
         }
+
+        if (gridManager.discardMode && Input.GetMouseButtonDown(0))
+        {
+            Vector3 mousePos = Input.mousePosition;
+            RectTransform rectTransform = GetComponent<RectTransform>();
+            if (RectTransformUtility.RectangleContainsScreenPoint(rectTransform, mousePos, Camera.main))
+            {
+                // check if the card is in hand
+                if (row == -1 && col == -1)
+                {
+                    // Destroy the card if it was in the hand
+                    Destroy(gameObject);
+                    gridManager.discardMode = false;
+
+                    battleManager.discardCardText.SetActive(false);
+                    battleManager.onCardDiscarded?.Invoke();
+                    Debug.Log("Card " + cardData.CardName + " discarded.");
+                }
+            }
+        }
     }
 
     // **Handle Card Removal or Return**
@@ -126,7 +150,6 @@ public class CardDisplay : MonoBehaviour
     {
         if (row == -1 || col == -1)
         {
-            Debug.LogWarning("Card is not in the grid.");
             return;
         }
 
